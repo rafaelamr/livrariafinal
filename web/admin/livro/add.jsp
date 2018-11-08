@@ -2,12 +2,11 @@
 <%@include file="../cabecalho.jsp" %>
 <div class="card">
     <div class="card-header">
-        <h5 class="title">Edita Livro</h5>
+        <h5 class="title">Adiciona Livro</h5>
     </div>
     <div class="card-body">
         <!--MODIFICAR PARA ADD-->
-        <form action="UploadWS" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="urldestino" value="AutorWS">
+        <form action="LivroWS" method="POST">
             <div class="row">
                 <div class="col-md-6 pr-md-1">
                     <div class="form-group">
@@ -76,7 +75,7 @@
                 <div class="col-md-6 pr-md-1">
                     <div class="form-group">
                         <label>Valor</label>
-                        <input type="number" step="0.01" name="txtPaginas" required class="form-control" >
+                        <input type="number" step="0.01" name="txtValor" required class="form-control" >
                     </div>
                 </div>
             </div>
@@ -85,7 +84,7 @@
             <button class="btn btn-primary btn-round text-center" type="submit">
                 <i class="tim-icons icon-cloud-upload-94"></i> Salvar
             </button>
-            <a class="btn btn-primary btn-round text-center" href="AutorWS?acao=list">
+            <a class="btn btn-primary btn-round text-center" href="LivroWS?acao=list">
                 <i class="tim-icons icon-bullet-list-67"></i> Listar
             </a>
         </form>

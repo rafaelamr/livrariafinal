@@ -3,10 +3,10 @@
 
 <div class="card ">
     <div class="card-header">
-        <h4 class="card-title">Admin</h4>
+        <h4 class="card-title">Livro</h4>
     </div>
     <div class="card-body">
-        <a class="btn btn-primary btn-round text-center" href="add.jsp">
+        <a class="btn btn-primary btn-round text-center" href="LivroWS?acao=add">
             <i class="tim-icons icon-simple-add"></i> Adiciona
         </a>
         <div class="table-responsive">
@@ -16,13 +16,28 @@
                     ID
                 </th>
                 <th>
-                    Nome
+                    Titulo
                 </th>
                 <th>
-                    Email
+                    Autor
                 </th>
                 <th>
-                    Foto
+                    Genero
+                </th>
+                <th>
+                    Classificação
+                </th>
+                <th>
+                    Editora
+                </th>
+                <th>
+                    Data da Publicação
+                </th>
+                <th>
+                    Páginas
+                </th>
+                <th>
+                    Valor
                 </th>
                 <th>
                     Edita
@@ -36,16 +51,21 @@
                     <c:forEach items="${lista}" var="obj">
                         <tr>
                             <td>${obj.id}</td>
-                            <td>${obj.nome}</td>
-                            <td>${obj.email}</td>
-                            <td><img src="../../arquivos/${obj.endFoto}" height="42" width="42"></td>
+                            <td>${obj.titulo}</td>
+                            <td>${obj.autor.nome}</td>
+                            <td>${obj.genero.genero}</td>
+                            <td>${obj.classificacao.classificacao}</td>
+                            <td>${obj.editora.nome}</td>
+                            <td>${obj.datapublicacao}</td>
+                            <td>${obj.paginas}</td>
+                            <td>${obj.valor}</td>
                             <td>
-                                <a class="btn btn-info btn-fab btn-icon btn-round" href="AdminWS?acao=edit&id=${obj.id}">
+                                <a class="btn btn-info btn-fab btn-icon btn-round" href="LivroWS?acao=edit&id=${obj.id}">
                                     <i class="tim-icons icon-pencil"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-fab btn-icon btn-round" href="AdminWS?acao=del&id=${obj.id}">
+                                <a class="btn btn-primary btn-fab btn-icon btn-round" href="LivroWS?acao=del&id=${obj.id}">
                                     <i class="tim-icons icon-trash-simple"></i>
                                 </a>
                             </td>
